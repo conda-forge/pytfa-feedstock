@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/EPFL-LCSB/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 66a7320c61042fabd43575b4179d9629304ca3d9f748681e94c8355b18cb4380
+  sha256: 4300da87cde6d915db3bfddc288fcfb32885eedf00521651ac61f71b1aeee7e3
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
@@ -28,6 +28,7 @@ requirements:
     - pandas
     - cobra <=0.24.0
     - bokeh >=0.12.1
+    - depinfo <=1.6.0
     - numpy
     - optlang
     - scipy
