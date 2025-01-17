@@ -11,7 +11,7 @@ source:
   sha256: 4300da87cde6d915db3bfddc288fcfb32885eedf00521651ac61f71b1aeee7e3
 
 build:
-  number: 2
+  number: 3
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
   skip: true  # [py<38]
@@ -19,10 +19,10 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
 
   run:
-    - python
+    - python >={{ python_min }}
     - equilibrator-api
     - equilibrator-cache
     - networkx
@@ -44,6 +44,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
 
 
 about:
